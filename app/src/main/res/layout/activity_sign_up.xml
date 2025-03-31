@@ -9,26 +9,30 @@
         android:id="@+id/ed_username"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp" />
+        android:hint="..."
+        android:layout_marginTop="16dp"/>
 
     <EditText
         android:id="@+id/ed_password"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="8dp" />
+        android:hint="123"
+        android:layout_marginTop="8dp"/>
 
     <EditText
         android:id="@+id/ed_confirm_pwd"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="8dp" />
+        android:hint="123"
+        android:layout_marginTop="8dp"/>
 
     <Button
         android:id="@+id/btn_create_user"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
         android:text="CREATE USER"
-        android:textColor="@color/white" />
+        android:layout_marginTop="16dp"
+        android:backgroundTint="#CCCCCC"
+        android:textColor="#000000"/>
 
 </LinearLayout> 
