@@ -30,31 +30,21 @@ class MainActivity : AppCompatActivity() {
         }
 
         btnLogin.setOnClickListener {
+            val credentials = getSharedPreferences(CREDENTIAL_SHARED_PREF, Context.MODE_PRIVATE)
+            val strUsername = credentials.getString("Username", null)
+            val strPassword = credentials.getString("Password", null)
+
             val usernameFromEd = edUsername.text.toString()
             val passwordFromEd = edPassword.text.toString()
 
-            when {
-                usernameFromEd.isEmpty() -> {
-                    Toast.makeText(this, "Please enter username", Toast.LENGTH_SHORT).show()
+            if (strUsername != null && usernameFromEd.isNotEmpty() && strUsername.equals(usernameFromEd, ignoreCase = true)) {
+                if (strPassword != null && passwordFromEd.isNotEmpty() && strPassword.equals(passwordFromEd, ignoreCase = true)) {
+                    Toast.makeText(this@MainActivity, "Login Successful", Toast.LENGTH_SHORT).show()
+                } else {
+                    Toast.makeText(this@MainActivity, "Login Failed", Toast.LENGTH_SHORT).show()
                 }
-                passwordFromEd.isEmpty() -> {
-                    Toast.makeText(this, "Please enter password", Toast.LENGTH_SHORT).show()
-                }
-                else -> {
-                    val credentials = getSharedPreferences(CREDENTIAL_SHARED_PREF, Context.MODE_PRIVATE)
-                    val strUsername = credentials.getString("Username", null)
-                    val strPassword = credentials.getString("Password", null)
-
-                    if (strUsername == null || strPassword == null) {
-                        Toast.makeText(this, "No user found. Please sign up", Toast.LENGTH_SHORT).show()
-                    } else if (!strUsername.equals(usernameFromEd, ignoreCase = true)) {
-                        Toast.makeText(this, "Username is incorrect", Toast.LENGTH_SHORT).show()
-                    } else if (!strPassword.equals(passwordFromEd, ignoreCase = true)) {
-                        Toast.makeText(this, "Password is incorrect", Toast.LENGTH_SHORT).show()
-                    } else {
-                        Toast.makeText(this, "Login Successful", Toast.LENGTH_SHORT).show()
-                    }
-                }
+            } else {
+                Toast.makeText(this@MainActivity, "Login Failed", Toast.LENGTH_SHORT).show()
             }
         }
     }

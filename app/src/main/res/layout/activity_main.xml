@@ -9,32 +9,26 @@
         android:id="@+id/ed_username"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="..."
-        android:layout_marginTop="16dp"/>
+        android:layout_marginTop="16dp" />
 
     <EditText
         android:id="@+id/ed_password"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="123"
-        android:layout_marginTop="8dp"/>
+        android:layout_marginTop="8dp" />
 
     <Button
         android:id="@+id/btn_login"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="LOGIN"
         android:layout_marginTop="16dp"
-        android:backgroundTint="#CCCCCC"
-        android:textColor="#000000"/>
+        android:text="LOGIN" />
 
     <Button
         android:id="@+id/btn_signup"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="SIGNUP"
         android:layout_marginTop="8dp"
-        android:backgroundTint="#CCCCCC"
-        android:textColor="#000000"/>
+        android:text="SIGNUP" />
 
 </LinearLayout>
